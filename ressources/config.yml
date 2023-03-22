@@ -1,0 +1,6 @@
+rdmdata: 'coucou'
+a: 123
+b: 3.0
+c:
+  - 'a'
+  - 'b'

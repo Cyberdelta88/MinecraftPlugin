@@ -1,0 +1,18 @@
+name: PluginMc_V1
+author: Cyberdelta88
+main: fr.cyberdelta88.PluginMCtest.Main
+version: 0.1
+description: C'est un plugin de test
+
+commands:
+  armorstand:
+  troll:
+  setrdmdata:
+  testconfig:
+  gui :
+    aliases: [GUI, guis]
+  namemc :
+  quoi :
+  katana :
+  youtube:
+    aliases: [yt, ytb]
