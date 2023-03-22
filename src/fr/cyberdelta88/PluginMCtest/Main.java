@@ -1,6 +1,7 @@
 package fr.cyberdelta88.PluginMCtest;
 
 import fr.cyberdelta88.PluginMCtest.commands.*;
+import fr.cyberdelta88.PluginMCtest.files.Customconfigfiles;
 import fr.cyberdelta88.PluginMCtest.listeners.Clickguievent;
 import fr.cyberdelta88.PluginMCtest.listeners.moove;
 import org.bukkit.Bukkit;
@@ -29,6 +30,7 @@ public class Main extends JavaPlugin {
         this.getCommand("setrdmdata").setExecutor(new CmdSetrdmdata());
         this.getCommand("troll").setExecutor(new Cmdtroll());
         this.getCommand("armorstand").setExecutor(new CmdArmorstand());
+        this.getCommand("reloadconfig").setExecutor(new CmdReloadConfig());
 
         getServer().getPluginManager().registerEvents(new DecoReco(), this);
         getServer().getPluginManager().registerEvents(new scoreboardtimer(), this);
@@ -38,6 +40,12 @@ public class Main extends JavaPlugin {
 
         getConfig().options().copyDefaults();
         saveDefaultConfig();
+
+        Customconfigfiles.setup();
+        Customconfigfiles.getcustomfile().addDefault("message", "message par défaut");
+        Customconfigfiles.getcustomfile().options().copyDefaults(true);
+        Customconfigfiles.savecustomfile();
+
     }
 
 

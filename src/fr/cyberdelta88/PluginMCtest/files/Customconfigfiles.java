@@ -14,7 +14,7 @@ public class Customconfigfiles {
     private static FileConfiguration customfile;
 
     public static void setup() {
-        file = new File(Bukkit.getServer().getPluginManager().getPlugin("PluginMCtest").getDataFolder(), "customconfig.yml");
+        file = new File(Bukkit.getServer().getPluginManager().getPlugin("PluginMc_V1").getDataFolder(), "customconfig.yml");
 
         if (!file.exists()) {
             try{
@@ -26,5 +26,19 @@ public class Customconfigfiles {
         }
         customfile = YamlConfiguration.loadConfiguration(file);
     }
+    public static FileConfiguration getcustomfile() {
+        return customfile;
+    }
 
+    public static void savecustomfile() {
+        try {
+            customfile.save(file);
+        } catch (IOException e) {
+            System.out.println("failed");
+        }
+    }
+
+    public static void reloadcustomfile() {
+        customfile = YamlConfiguration.loadConfiguration(file);
+    }
 }
