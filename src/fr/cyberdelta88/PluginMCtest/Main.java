@@ -31,6 +31,7 @@ public class Main extends JavaPlugin {
         this.getCommand("troll").setExecutor(new Cmdtroll());
         this.getCommand("armorstand").setExecutor(new CmdArmorstand());
         this.getCommand("reloadconfig").setExecutor(new CmdReloadConfig());
+        this.getCommand("animation").setExecutor(new CmdAnimation());
 
         getServer().getPluginManager().registerEvents(new DecoReco(), this);
         getServer().getPluginManager().registerEvents(new scoreboardtimer(), this);
