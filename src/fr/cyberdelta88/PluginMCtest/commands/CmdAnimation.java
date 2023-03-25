@@ -30,6 +30,8 @@ public class CmdAnimation implements CommandExecutor {
             Runnable animation;
             int animate = Bukkit.getScheduler().scheduleAsyncRepeatingTask(Main.getPlugin(Main.class), new animation(stand), 0, 1);
 
+
+
             new BukkitRunnable() {
                 @Override
                 public void run() {
@@ -37,7 +39,7 @@ public class CmdAnimation implements CommandExecutor {
                     stand.remove();
                 }
 
-            }.runTaskLater((Plugin) this, 100);
+            }.runTaskLater(Main.getPlugin(Main.class), 100);
 
         }
 
