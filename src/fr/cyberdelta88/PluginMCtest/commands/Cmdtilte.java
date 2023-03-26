@@ -15,7 +15,7 @@ public class Cmdtilte implements CommandExecutor {
         if (sender instanceof Player) {
             Player p = (Player) sender;
 
-            String text = "caca";
+            String text = "TITLE (bah oui hein)";
             IChatBaseComponent chatTitle = IChatBaseComponent.ChatSerializer.a("{\"text\": \"" + text + "\",color:" + ChatColor.GOLD.name().toLowerCase() + "}");
 
             PacketPlayOutTitle title = new PacketPlayOutTitle(PacketPlayOutTitle.EnumTitleAction.TITLE, chatTitle);
@@ -23,7 +23,6 @@ public class Cmdtilte implements CommandExecutor {
 
             ((CraftPlayer) p).getHandle().playerConnection.sendPacket(title);
             ((CraftPlayer) p).getHandle().playerConnection.sendPacket(length);
-            p.sendMessage("debug");
         }
 
         return false;
