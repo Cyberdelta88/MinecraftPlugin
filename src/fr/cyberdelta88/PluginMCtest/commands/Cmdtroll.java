@@ -25,6 +25,7 @@ public class Cmdtroll implements CommandExecutor {
                     p.sendMessage(ChatColor.GOLD + "Tu à trollé " + target.getDisplayName());
                     target.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 200, 20));
                     target.sendMessage(ChatColor.YELLOW + "Tu t'es fait troller par " + ChatColor.BLUE + p);
+
                 }
 
             } else {

@@ -5,6 +5,7 @@ version: 0.1
 description: C'est un plugin de test
 
 commands:
+  title:
   animation:
   reloadconfig:
   armorstand:

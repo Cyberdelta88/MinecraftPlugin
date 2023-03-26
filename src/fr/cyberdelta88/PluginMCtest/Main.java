@@ -4,10 +4,13 @@ import fr.cyberdelta88.PluginMCtest.commands.*;
 import fr.cyberdelta88.PluginMCtest.files.Customconfigfiles;
 import fr.cyberdelta88.PluginMCtest.listeners.Clickguievent;
 import fr.cyberdelta88.PluginMCtest.listeners.moove;
+import net.minecraft.server.v1_8_R3.IChatBaseComponent;
+import net.minecraft.server.v1_8_R3.PacketPlayOutTitle;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -32,6 +35,7 @@ public class Main extends JavaPlugin {
         this.getCommand("armorstand").setExecutor(new CmdArmorstand());
         this.getCommand("reloadconfig").setExecutor(new CmdReloadConfig());
         this.getCommand("animation").setExecutor(new CmdAnimation());
+        this.getCommand("title").setExecutor(new Cmdtilte());
 
         getServer().getPluginManager().registerEvents(new DecoReco(), this);
         getServer().getPluginManager().registerEvents(new scoreboardtimer(), this);
@@ -66,6 +70,16 @@ class DecoReco implements Listener {
         Player p = e.getPlayer();
         p.sendMessage(ChatColor.DARK_GREEN + "Bienvenue beau gosse !");
         Bukkit.broadcastMessage(ChatColor.GREEN + p.getName() + ChatColor.DARK_RED + " a rejoint le serveur !");
+
+
+        IChatBaseComponent chatTitle = IChatBaseComponent.ChatSerializer.a("{\"text\": \"" + "Bienvenue sur le serveur" + "\",color:" + ChatColor.LIGHT_PURPLE.name().toLowerCase() + "}");
+
+        PacketPlayOutTitle title = new PacketPlayOutTitle(PacketPlayOutTitle.EnumTitleAction.TITLE, chatTitle);
+        PacketPlayOutTitle length = new PacketPlayOutTitle(5, 100, 5);
+
+        ((CraftPlayer) p).getHandle().playerConnection.sendPacket(title);
+        ((CraftPlayer) p).getHandle().playerConnection.sendPacket(length);
+
     }
     @EventHandler
     public void onPlayerJoinn(PlayerQuitEvent e) {
