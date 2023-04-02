@@ -19,7 +19,7 @@ public class Cmdtilte implements CommandExecutor {
             IChatBaseComponent chatTitle = IChatBaseComponent.ChatSerializer.a("{\"text\": \"" + text + "\",color:" + ChatColor.GOLD.name().toLowerCase() + "}");
 
             PacketPlayOutTitle title = new PacketPlayOutTitle(PacketPlayOutTitle.EnumTitleAction.TITLE, chatTitle);
-            PacketPlayOutTitle length = new PacketPlayOutTitle(5, 20, 5);
+            PacketPlayOutTitle length = new PacketPlayOutTitle(5, 50, 5);
 
             ((CraftPlayer) p).getHandle().playerConnection.sendPacket(title);
             ((CraftPlayer) p).getHandle().playerConnection.sendPacket(length);
