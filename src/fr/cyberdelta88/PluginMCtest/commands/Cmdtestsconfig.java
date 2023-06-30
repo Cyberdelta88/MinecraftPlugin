@@ -1,13 +1,11 @@
 package fr.cyberdelta88.PluginMCtest.commands;
 
-import fr.cyberdelta88.PluginMCtest.Main;
+
 import fr.cyberdelta88.PluginMCtest.files.Customconfigfiles;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 
 public class Cmdtestsconfig implements CommandExecutor {
 
